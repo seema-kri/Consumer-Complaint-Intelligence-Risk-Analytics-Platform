@@ -244,7 +244,7 @@ jupyter notebook notebooks/Data_Cleaning.ipynb
 
 Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023), product risk bar charts, state risk ranking, submission channel donut, and interactive State / Product / Year filters.
 
-![Dashboard Preview](dashboard/Dashbord.png)
+![Dashboard Preview](dashboard/Dashboard.png)
 
 ---
 
