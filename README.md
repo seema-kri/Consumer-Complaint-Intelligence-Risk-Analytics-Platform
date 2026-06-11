@@ -265,12 +265,12 @@ Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023),
 
 ## 👤 About
 
-**[Your Name]**
-Aspiring Data Analyst | SQL · Python · Power BI · Excel
+**[Seema Kumari]**
+Data Analyst | SQL · Python · Power BI · Excel
 
-- 📧 [your.email@gmail.com]
-- 💼 [linkedin.com/in/yourprofile]
-- 🌐 [yourportfolio.com]
+- 📧 [kriseema87@gmail.com]
+- 💼 [https://www.linkedin.com/in/seema-kumari-375763308/]
+- 🌐 [https://github.com/seema-kri]
 
 *Open to data analyst internship and entry-level opportunities.*
 
