@@ -1,4 +1,4 @@
-# Consumer Complaint Intelligence & Risk Analytics Platform
+# 🏦 Consumer Complaint Intelligence & Risk Analytics Platform
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)
@@ -117,6 +117,7 @@ Raw Data (CSV)
 | Florida | 6,488 | 🟠 High |
 | Texas | 4,686 | 🟠 High |
 | New York | 4,442 | 🟡 Elevated |
+| Georgia | 2,921 | 🟡 Elevated |
 
 ### Complaint Trend
 ```
@@ -168,33 +169,33 @@ Raw Data (CSV)
 Consumer-Complaint-Intelligence-Risk-Analytics-Platform/
 │
 ├── data/
-│   ├── Consumer_Complaints.xlsx      # Raw source dataset
-│   └── cleaned_consumer_complaints.xls  # Post-cleaning output
+│   ├── Consumer_Complaints.xlsx          # Raw source dataset
+│   └── cleaned_consumer_complaints.xls   # Post-cleaning output
 │
 ├── notebooks/
-│   └── Data_Cleaning.ipynb           # Python cleaning pipeline
+│   └── Data_Cleaning.ipynb               # Python cleaning pipeline
 │
 ├── sql/
-│   ├── 01_create_table.sql           # Schema definition
-│   ├── 02_data_validation.sql        # Quality checks
-│   ├── 03_business_analysis.sql      # Core business queries
-│   ├── 04_kpi_queries.sql            # KPI computation
-│   └── 05_advanced_analysis.sql      # Window functions, rankings
+│   ├── 01_create_table.sql               # Schema definition
+│   ├── 02_data_validation.sql            # Quality checks
+│   ├── 03_business_analysis.sql          # Core business queries
+│   ├── 04_kpi_queries.sql                # KPI computation
+│   └── 05_advanced_analysis.sql          # Window functions, rankings
 │
 ├── dashboard/
-│   ├── Dashboard.pbix                # Power BI source file
-│   ├── Dashboard.pbit                # Power BI template
-│   └── Dashbord.png                  # Dashboard screenshot
+│   ├── Dashboard.pbix                    # Power BI source file
+│   ├── Dashboard.pbit                    # Power BI template
+│   └── Dashboard.png                     # Dashboard screenshot
 │
 ├── reports/
-│   ├── SQL_Insights_Report.md        # Full written analysis
+│   ├── SQL_Insights_Report.md            # Full written analysis
 │   └── Consumer_Complaint_Intelligence_Platform.pdf
 │
 ├── docs/
-│   ├── Project_Charter.md            # Business context & stakeholders
-│   ├── KPI_Definitions.md            # Metric definitions & formulas
-│   ├── Data_Inventory.md             # Column-level data dictionary
-│   └── Business_Questions.md         # Analytics question framework
+│   ├── Project_Charter.md                # Business context & stakeholders
+│   ├── KPI_Definitions.md                # Metric definitions & formulas
+│   ├── Data_Inventory.md                 # Column-level data dictionary
+│   └── Business_Questions.md             # Analytics question framework
 │
 ├── LICENSE
 └── README.md
@@ -218,11 +219,11 @@ CREATE DATABASE complaint_analytics;
 -- Run schema
 \i sql/01_create_table.sql
 
--- Load data (update path)
+-- Load data (update path to your CSV)
 COPY complaints FROM '/path/to/complaints_raw.csv' CSV HEADER;
 ```
 
-### 3. Run analysis
+### 3. Run analysis scripts
 ```bash
 psql -d complaint_analytics -f sql/02_data_validation.sql
 psql -d complaint_analytics -f sql/03_business_analysis.sql
@@ -230,11 +231,15 @@ psql -d complaint_analytics -f sql/04_kpi_queries.sql
 psql -d complaint_analytics -f sql/05_advanced_analysis.sql
 ```
 
-### 4. Python cleaning notebook
+### 4. Run Python cleaning notebook
 ```bash
 pip install pandas numpy jupyter
 jupyter notebook notebooks/Data_Cleaning.ipynb
 ```
+
+### 5. Open Power BI Dashboard
+Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
+🔴 **[View Live Interactive Dashboard →](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
 
 ---
 
@@ -242,9 +247,9 @@ jupyter notebook notebooks/Data_Cleaning.ipynb
 
 > 🔴 **[View Live Interactive Dashboard →](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
 
-Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023), product risk bar charts, state risk ranking, submission channel donut, and interactive State / Product / Year filters.
-
 ![Dashboard Preview](dashboard/Dashboard.png)
+
+*Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023), product risk bar charts, state risk ranking, submission channel donut, and interactive State / Product / Year filters.*
 
 ---
 
@@ -265,12 +270,12 @@ Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023),
 
 ## 👤 About
 
-**[Seema Kumari]**
+**Seema Kumari**
 Data Analyst | SQL · Python · Power BI · Excel
 
-- 📧 [kriseema87@gmail.com]
-- 💼 [https://www.linkedin.com/in/seema-kumari-375763308/]
-- 🌐 [https://github.com/seema-kri]
+- 📧 kriseema87@gmail.com
+- 💼 [linkedin.com/in/seema-kumari-375763308](https://www.linkedin.com/in/seema-kumari-375763308/)
+- 🌐 [github.com/seema-kri](https://github.com/seema-kri)
 
 *Open to data analyst internship and entry-level opportunities.*
 
