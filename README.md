@@ -1,4 +1,5 @@
 # 🏦 Consumer Complaint Intelligence & Risk Analytics Platform
+### End-to-End Risk Analytics — Data Cleaning → SQL → Executive Power BI Reporting
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)
@@ -8,60 +9,60 @@
 [![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-6C4EE4?style=flat-square&logo=databricks&logoColor=white)](https://app.mavenanalytics.io/datasets?search=finan)
 [![Power BI Live](https://img.shields.io/badge/🔴%20Live%20Dashboard-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)
 
-> **End-to-end data analytics project** — from raw complaint data to executive dashboard — analyzing 62,516 consumer financial complaints (2017–2023) to surface product risk, geographic hotspots, and operational gaps.
+> An end-to-end risk analytics platform analyzing **62,516 consumer financial complaints (2017–2023)** to surface product risk, geographic hotspots, and operational response gaps — built the way a risk/compliance analytics team would deliver it to leadership: defined business questions, governed SQL layer, and a dashboard that ends in scored risk and concrete recommendations.
 
 ---
 
 ## Table of Contents
-
-- [Business Problem](#-business-problem)
-- [Impact](#-impact)
-- [Solution Architecture](#-solution-architecture)
-- [Key Findings](#-key-findings)
-- [Recommendations](#-recommendations)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [How to Run](#-how-to-run)
-- [Dashboard Preview](#-dashboard-preview)
-- [Skills Demonstrated](#-skills-demonstrated)
+- [Business Problem](#business-problem)
+- [Impact](#impact)
+- [Solution Architecture](#solution-architecture)
+- [Key Findings](#key-findings)
+- [Recommendations](#recommendations)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [How to Run](#how-to-run)
+- [Dashboard Preview](#dashboard-preview)
+- [Skills Demonstrated](#skills-demonstrated)
+- [About](#about)
 
 ---
 
-## 🔴 Business Problem
+## Business Problem
 
-**Situation:** Financial institutions process thousands of consumer complaints monthly across multiple products, states, and channels — but without structured analytics, these signals remain invisible to decision-makers.
+**Situation:** Financial institutions process thousands of consumer complaints monthly across multiple products, states, and channels — but without structured analytics, these signals stay invisible to decision-makers.
 
-**Problem:** The absence of a centralized complaint intelligence system meant:
-- Customer pain points were buried in unstructured records
+**Problem:** Without a centralized complaint intelligence system:
+- Customer pain points stayed buried in unstructured records
 - High-risk products could not be identified early
 - Response performance had no measurable baseline
 - Geographic risk concentration was unknown
 
-**Question this project answers:**
+**Core question this project answers:**
 > *Which products, issues, and regions pose the highest risk — and is the organization responding effectively?*
 
 ---
 
-## 📊 Impact
+## Impact
 
 | Metric | Value |
-|--------|-------|
+|---|---|
 | Total complaints analyzed | **62,516** |
-| Timely response rate identified | **93.77%** |
+| Timely response rate | **93.77%** |
 | Late response rate flagged | **3.84%** |
 | Product categories risk-ranked | **9** |
 | States mapped | **51** |
 | Issue categories classified | **76** |
 
-**Business Value Delivered:**
+**Business value delivered:**
 - Identified that **2 product categories drive 66% of all complaints** → enables focused resource allocation
-- Flagged **California as 2.1× higher risk** than the next state → supports regional monitoring strategy
+- Flagged **California at 2.1× the risk** of the next state → supports regional monitoring strategy
 - Revealed **Q2–Q3 as peak complaint periods** → informs staffing and SLA planning
-- Quantified **fraud as 56% of Money Transfer complaints** → triggers fraud detection investment
+- Quantified **fraud as 56% of Money Transfer complaints** → triggers fraud-detection investment case
 
 ---
 
-## 🏗️ Solution Architecture
+## Solution Architecture
 
 ```
 Raw Data (CSV)
@@ -88,11 +89,11 @@ Raw Data (CSV)
 
 ---
 
-## 🔍 Key Findings
+## Key Findings
 
 ### Product Risk
 | Rank | Product | Complaints | Share |
-|------|---------|-----------|-------|
+|---|---|---|---|
 | 1 | Checking & Savings Account | 24,814 | 39.69% |
 | 2 | Credit Card / Prepaid Card | 16,197 | 25.91% |
 | 3 | Credit Reporting Services | 7,710 | 12.33% |
@@ -103,7 +104,7 @@ Raw Data (CSV)
 
 ### Top Customer Issues
 | Issue | Complaints |
-|-------|-----------|
+|---|---|
 | Managing an Account | 15,109 |
 | Purchase Statement Problems | 4,415 |
 | Incorrect Credit Information | 4,145 |
@@ -112,12 +113,12 @@ Raw Data (CSV)
 
 ### Geographic Risk
 | State | Complaints | Risk Level |
-|-------|-----------|------------|
-| California | 13,709 | 🔴 Critical |
-| Florida | 6,488 | 🟠 High |
-| Texas | 4,686 | 🟠 High |
-| New York | 4,442 | 🟡 Elevated |
-| Georgia | 2,921 | 🟡 Elevated |
+|---|---|---|
+| California | 13,709 | Critical |
+| Florida | 6,488 | High |
+| Texas | 4,686 | High |
+| New York | 4,442 | Elevated |
+| Georgia | 2,921 | Elevated |
 
 ### Complaint Trend
 ```
@@ -132,29 +133,29 @@ Raw Data (CSV)
 
 ---
 
-## ✅ Recommendations
+## Recommendations
 
 ### 1. Product Experience
-- **Immediate:** Audit account management workflows — 60%+ of checking complaints stem from account open/close/manage friction
-- **Short-term:** Redesign credit card onboarding — 1,867 "Getting a Credit Card" complaints indicate acquisition funnel issues
+- **Immediate:** Audit account management workflows — 60%+ of checking complaints stem from account open/close/manage friction.
+- **Short-term:** Redesign credit card onboarding — 1,867 "Getting a Credit Card" complaints indicate acquisition-funnel issues.
 
 ### 2. Fraud & Risk
-- **Immediate:** Deploy enhanced transaction monitoring for Money Transfer products — fraud accounts for >50% of category complaints
-- **Ongoing:** Improve credit reporting dispute SLA — 4,145 incorrect information complaints signal data integrity gaps
+- **Immediate:** Deploy enhanced transaction monitoring for Money Transfer products — fraud accounts for over 50% of category complaints.
+- **Ongoing:** Improve credit reporting dispute SLA — 4,145 incorrect-information complaints signal data integrity gaps.
 
 ### 3. Operations
-- **Quarterly planning:** Staff up Q2 and Q3 — these quarters carry ~53% of annual complaint load
-- **SLA monitoring:** The 3.84% late response rate, while below the 5% threshold, should be tracked at product level
+- **Quarterly planning:** Staff up Q2 and Q3 — these quarters carry roughly 53% of annual complaint volume.
+- **SLA monitoring:** The 3.84% late-response rate, while below the 5% threshold, should be tracked at product level.
 
 ### 4. Geographic
-- **Regional dashboards:** Build state-level monitoring for CA, FL, TX, NY — these 4 states represent ~47% of all complaints
+- **Regional dashboards:** Build state-level monitoring for CA, FL, TX, NY — these four states represent roughly 47% of all complaints.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Tool | Purpose |
-|-------|------|---------|
+|---|---|---|
 | Data Cleaning | Excel + Python (Pandas) | Deduplication, standardization, feature engineering |
 | Database | PostgreSQL 15 | Structured query layer, KPI computation |
 | Analysis | SQL (Window Functions, CTEs) | Product ranking, trend analysis, response metrics |
@@ -163,7 +164,7 @@ Raw Data (CSV)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Consumer-Complaint-Intelligence-Risk-Analytics-Platform/
@@ -203,7 +204,7 @@ Consumer-Complaint-Intelligence-Risk-Analytics-Platform/
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### 1. Clone the repository
 ```bash
@@ -237,15 +238,15 @@ pip install pandas numpy jupyter
 jupyter notebook notebooks/Data_Cleaning.ipynb
 ```
 
-### 5. Open Power BI Dashboard
+### 5. Open the Power BI dashboard
 Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
-🔴 **[View Live Interactive Dashboard →](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
+**[→ View Live Interactive Dashboard](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
 
 ---
 
-## 📸 Dashboard Preview
+## Dashboard Preview
 
-> 🔴 **[View Live Interactive Dashboard →](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
+**[→ View Live Interactive Dashboard](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
 
 ![Dashboard Preview](dashboard/Dashboard.png)
 
@@ -253,31 +254,29 @@ Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 | Skill | Applied How |
-|-------|-------------|
-| **SQL** | 5-file query suite: DDL, DML, window functions (`DENSE_RANK`, `SUM OVER`), aggregations, CTEs |
-| **Python / Pandas** | Data cleaning pipeline — null handling, dtype casting, feature engineering |
-| **Data Modeling** | Flat table schema with engineered time dimensions (month, year, quarter) |
-| **KPI Design** | Defined and computed 9 business KPIs with clear formulas and benchmarks |
-| **Data Storytelling** | Structured findings using Problem → Finding → Business Impact → Recommendation |
-| **Dashboard Design** | Executive Power BI layout with filter slicers, ranked visuals, trend analysis |
-| **Business Acumen** | Translated complaint data into product risk scores, geographic alerts, and staffing recommendations |
-| **Documentation** | Project charter, data dictionary, KPI definitions, full SQL insights report |
+|---|---|
+| SQL | 5-file query suite: DDL, DML, window functions (`DENSE_RANK`, `SUM OVER`), aggregations, CTEs |
+| Python / Pandas | Data cleaning pipeline — null handling, dtype casting, feature engineering |
+| Data Modeling | Flat table schema with engineered time dimensions (month, year, quarter) |
+| KPI Design | Defined and computed 9 business KPIs with clear formulas and benchmarks |
+| Data Storytelling | Structured findings using Problem → Finding → Business Impact → Recommendation |
+| Dashboard Design | Executive Power BI layout with filter slicers, ranked visuals, trend analysis |
+| Business Acumen | Translated complaint data into product risk scores, geographic alerts, and staffing recommendations |
+| Documentation | Project charter, data dictionary, KPI definitions, full SQL insights report |
 
 ---
 
-## 👤 About
+## About
 
 **Seema Kumari**
-Data Analyst | SQL · Python · Power BI · Excel
+Data Analyst | SQL · Python · Power BI · Excel | Turning 60K+ row datasets into risk-scored, executive-ready decisions
 
 - 📧 kriseema87@gmail.com
 - 💼 [linkedin.com/in/seema-kumari-375763308](https://www.linkedin.com/in/seema-kumari-375763308/)
 - 🌐 [github.com/seema-kri](https://github.com/seema-kri)
-
-*Open to data analyst internship and entry-level opportunities.*
 
 ---
 
