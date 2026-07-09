@@ -1,5 +1,5 @@
 # 🏦 Consumer Complaint Intelligence & Risk Analytics Platform
-### Turning 62,516 complaints into 6 decisions leadership could act on the same week
+### End-to-End Risk Analytics — Data Cleaning → SQL → Executive Power BI Reporting
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)
@@ -9,13 +9,13 @@
 [![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-6C4EE4?style=flat-square&logo=databricks&logoColor=white)](https://app.mavenanalytics.io/datasets?search=finan)
 [![Power BI Live](https://img.shields.io/badge/🔴%20Live%20Dashboard-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)
 
-> A dashboard is a picture. This project is a decision engine — it takes 62,516 raw consumer financial complaints (2017–2023) and turns them into ranked risk, flagged regions, and specific actions a risk/compliance team could sign off on. Every chart below exists to answer one question: **what should we do next?**
+> This project analyzes 62,516 consumer financial complaints (2017–2023) to identify product risk, regional concentration, and gaps in response performance. It's structured the way a risk/compliance analytics team would deliver it: defined business questions, a governed SQL layer, and a set of findings written as decisions — not just charts.
 
 ---
 
-## 📌 The 6 Decisions This Project Drives
+## Decisions This Analysis Supports
 
-*This is the part most portfolio projects skip. A chart says "here's the data." A decision says "here's what to do about it."*
+Each finding below is written as a decision, with the supporting evidence and the resulting action — the format used when presenting to a risk or leadership team.
 
 | # | Decision | Evidence Behind It | Action |
 |---|---|---|---|
@@ -25,6 +25,8 @@
 | 4 | **Pre-staff Q2–Q3, not just year-round evenly** | Q2–Q3 carry **~53%** of annual complaint volume | Shift seasonal headcount/SLA planning ahead of peak |
 | 5 | **Audit the account-management workflow now** | 60%+ of checking-account complaints trace to open/close/manage friction | Immediate UX/process audit, not a backlog item |
 | 6 | **Track the 3.84% late-response rate at product level, not just overall** | Aggregate rate is under the 5% threshold, but risk hides inside individual products | Move SLA monitoring from company-wide to per-product |
+
+*Decisions 1, 3, and 6 require no new tooling — they're reallocation/reporting changes achievable within existing systems. Decisions 2 and 5 (fraud monitoring, workflow audit) would need a scoping conversation with Risk/Product before commitment, since they carry implementation cost beyond this analysis.*
 
 ---
 
@@ -79,7 +81,6 @@ Raw Data (CSV)
 [Power BI] Executive Dashboard
        • KPI scorecards, trend lines, risk ranking
        • State heat map, channel donut, filter slicers
-       • Every visual maps back to a decision above ↑
 ```
 
 ---
@@ -123,6 +124,9 @@ Raw Data (CSV)
 2022 ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░ 12,953  ← Peak
 2023 ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  9,131  ← Declining
 ```
+
+### Methodology Note
+*[Placeholder — replace with a real example from your own analysis before publishing.]* One thing that strengthens a project like this: a short note on a finding you initially misread and corrected after digging deeper (e.g., a metric that looked wrong until you traced it to a data quality issue, or a trend that needed a caveat). Even 2-3 honest sentences here signal real analytical work rather than a clean, first-pass narrative — but only include it if it actually happened during your analysis. Don't invent one.
 
 ---
 
@@ -218,7 +222,15 @@ Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the **[live version
 
 ![Dashboard Preview](dashboard/Dashboard.png)
 
-*KPI scorecards, complaint trend (2017–2023), product risk bars, state risk ranking, channel donut, and interactive State / Product / Year filters — each tied to a decision in the table above.*
+*KPI scorecards, complaint trend (2017–2023), product risk bars, state risk ranking, channel donut, and interactive State / Product / Year filters.*
+
+---
+
+## Limitations & Scope
+
+- **Dataset:** Public CFPB complaint data via Maven Analytics — chosen for volume and structure, not a live production feed. Recommendations above assume this data behaves like an internal complaint log; a production version would need to account for reporting-channel bias (not every complaint channel is equally represented) before recommendations are finalized.
+- **Time coverage:** Ends in 2023; no visibility into whether flagged issues have already been addressed since.
+- **State-level risk:** Ranked by raw complaint count, not normalized by state population or customer base size — a next iteration would weight this before treating California's rank as pure risk severity.
 
 ---
 
@@ -230,7 +242,7 @@ Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the **[live version
 | Python / Pandas | Data cleaning pipeline — null handling, dtype casting, feature engineering |
 | Data Modeling | Flat table schema with engineered time dimensions (month, year, quarter) |
 | KPI Design | Defined and computed 9 business KPIs with clear formulas and benchmarks |
-| Decision Framing | Every finding converted into a named decision + owner action, not left as a chart |
+| Decision Framing | Each finding converted into a decision with supporting evidence and a recommended action |
 | Dashboard Design | Executive Power BI layout with filter slicers, ranked visuals, trend analysis |
 | Business Acumen | Translated complaint data into product risk scores, regional alerts, staffing calls |
 | Documentation | Project charter, data dictionary, KPI definitions, full SQL insights report |
