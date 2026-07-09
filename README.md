@@ -1,5 +1,5 @@
 # 🏦 Consumer Complaint Intelligence & Risk Analytics Platform
-### End-to-End Risk Analytics — Data Cleaning → SQL → Executive Power BI Reporting
+### Turning 62,516 complaints into 6 decisions leadership could act on the same week
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)
@@ -9,34 +9,34 @@
 [![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-6C4EE4?style=flat-square&logo=databricks&logoColor=white)](https://app.mavenanalytics.io/datasets?search=finan)
 [![Power BI Live](https://img.shields.io/badge/🔴%20Live%20Dashboard-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)
 
-> An end-to-end risk analytics platform analyzing **62,516 consumer financial complaints (2017–2023)** to surface product risk, geographic hotspots, and operational response gaps — built the way a risk/compliance analytics team would deliver it to leadership: defined business questions, governed SQL layer, and a dashboard that ends in scored risk and concrete recommendations.
+> A dashboard is a picture. This project is a decision engine — it takes 62,516 raw consumer financial complaints (2017–2023) and turns them into ranked risk, flagged regions, and specific actions a risk/compliance team could sign off on. Every chart below exists to answer one question: **what should we do next?**
 
 ---
 
-## Table of Contents
-- [Business Problem](#business-problem)
-- [Impact](#impact)
-- [Solution Architecture](#solution-architecture)
-- [Key Findings](#key-findings)
-- [Recommendations](#recommendations)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [Dashboard Preview](#dashboard-preview)
-- [Skills Demonstrated](#skills-demonstrated)
-- [About](#about)
+## 📌 The 6 Decisions This Project Drives
+
+*This is the part most portfolio projects skip. A chart says "here's the data." A decision says "here's what to do about it."*
+
+| # | Decision | Evidence Behind It | Action |
+|---|---|---|---|
+| 1 | **Reallocate support resourcing to 2 products** | Checking & Savings + Credit Card account for **65.6%** of all complaint volume | Shift staffing/tooling budget toward these two lines first |
+| 2 | **Open a fraud-detection investment case for Money Transfer** | Fraud drives **56%** of all Money Transfer complaints | Greenlight enhanced transaction monitoring for this product line |
+| 3 | **Stand up regional monitoring for 4 states** | California, Florida, Texas, New York = **~47%** of complaints; California alone sits at **2.1×** the risk of the next state | Build state-level dashboards + escalation paths for these 4 |
+| 4 | **Pre-staff Q2–Q3, not just year-round evenly** | Q2–Q3 carry **~53%** of annual complaint volume | Shift seasonal headcount/SLA planning ahead of peak |
+| 5 | **Audit the account-management workflow now** | 60%+ of checking-account complaints trace to open/close/manage friction | Immediate UX/process audit, not a backlog item |
+| 6 | **Track the 3.84% late-response rate at product level, not just overall** | Aggregate rate is under the 5% threshold, but risk hides inside individual products | Move SLA monitoring from company-wide to per-product |
 
 ---
 
 ## Business Problem
 
-**Situation:** Financial institutions process thousands of consumer complaints monthly across multiple products, states, and channels — but without structured analytics, these signals stay invisible to decision-makers.
+**Situation:** Financial institutions process thousands of consumer complaints monthly across products, states, and channels — but without structured analytics, these signals stay invisible to decision-makers.
 
 **Problem:** Without a centralized complaint intelligence system:
-- Customer pain points stayed buried in unstructured records
-- High-risk products could not be identified early
-- Response performance had no measurable baseline
-- Geographic risk concentration was unknown
+- Customer pain points stay buried in unstructured records
+- High-risk products can't be identified early
+- Response performance has no measurable baseline
+- Geographic risk concentration is unknown
 
 **Core question this project answers:**
 > *Which products, issues, and regions pose the highest risk — and is the organization responding effectively?*
@@ -53,12 +53,6 @@
 | Product categories risk-ranked | **9** |
 | States mapped | **51** |
 | Issue categories classified | **76** |
-
-**Business value delivered:**
-- Identified that **2 product categories drive 66% of all complaints** → enables focused resource allocation
-- Flagged **California at 2.1× the risk** of the next state → supports regional monitoring strategy
-- Revealed **Q2–Q3 as peak complaint periods** → informs staffing and SLA planning
-- Quantified **fraud as 56% of Money Transfer complaints** → triggers fraud-detection investment case
 
 ---
 
@@ -85,6 +79,7 @@ Raw Data (CSV)
 [Power BI] Executive Dashboard
        • KPI scorecards, trend lines, risk ranking
        • State heat map, channel donut, filter slicers
+       • Every visual maps back to a decision above ↑
 ```
 
 ---
@@ -99,8 +94,6 @@ Raw Data (CSV)
 | 3 | Credit Reporting Services | 7,710 | 12.33% |
 | 4 | Mortgage | 6,601 | 10.56% |
 | 5 | Money Transfer Services | 3,453 | 5.52% |
-
-> Top 2 products account for **65.6% of all complaints.**
 
 ### Top Customer Issues
 | Issue | Complaints |
@@ -133,25 +126,6 @@ Raw Data (CSV)
 
 ---
 
-## Recommendations
-
-### 1. Product Experience
-- **Immediate:** Audit account management workflows — 60%+ of checking complaints stem from account open/close/manage friction.
-- **Short-term:** Redesign credit card onboarding — 1,867 "Getting a Credit Card" complaints indicate acquisition-funnel issues.
-
-### 2. Fraud & Risk
-- **Immediate:** Deploy enhanced transaction monitoring for Money Transfer products — fraud accounts for over 50% of category complaints.
-- **Ongoing:** Improve credit reporting dispute SLA — 4,145 incorrect-information complaints signal data integrity gaps.
-
-### 3. Operations
-- **Quarterly planning:** Staff up Q2 and Q3 — these quarters carry roughly 53% of annual complaint volume.
-- **SLA monitoring:** The 3.84% late-response rate, while below the 5% threshold, should be tracked at product level.
-
-### 4. Geographic
-- **Regional dashboards:** Build state-level monitoring for CA, FL, TX, NY — these four states represent roughly 47% of all complaints.
-
----
-
 ## Tech Stack
 
 | Layer | Tool | Purpose |
@@ -160,7 +134,7 @@ Raw Data (CSV)
 | Database | PostgreSQL 15 | Structured query layer, KPI computation |
 | Analysis | SQL (Window Functions, CTEs) | Product ranking, trend analysis, response metrics |
 | Visualization | Power BI | Executive dashboard, interactive filters |
-| Documentation | Markdown | Project charter, KPI definitions, data inventory |
+| Documentation | Markdown | Project charter, KPI definitions, business questions |
 
 ---
 
@@ -170,33 +144,33 @@ Raw Data (CSV)
 Consumer-Complaint-Intelligence-Risk-Analytics-Platform/
 │
 ├── data/
-│   ├── Consumer_Complaints.xlsx          # Raw source dataset
-│   └── cleaned_consumer_complaints.xls   # Post-cleaning output
+│   ├── Consumer_Complaints.xlsx
+│   └── cleaned_consumer_complaints.xls
 │
 ├── notebooks/
-│   └── Data_Cleaning.ipynb               # Python cleaning pipeline
+│   └── Data_Cleaning.ipynb
 │
 ├── sql/
-│   ├── 01_create_table.sql               # Schema definition
-│   ├── 02_data_validation.sql            # Quality checks
-│   ├── 03_business_analysis.sql          # Core business queries
-│   ├── 04_kpi_queries.sql                # KPI computation
-│   └── 05_advanced_analysis.sql          # Window functions, rankings
+│   ├── 01_create_table.sql
+│   ├── 02_data_validation.sql
+│   ├── 03_business_analysis.sql
+│   ├── 04_kpi_queries.sql
+│   └── 05_advanced_analysis.sql
 │
 ├── dashboard/
-│   ├── Dashboard.pbix                    # Power BI source file
-│   ├── Dashboard.pbit                    # Power BI template
-│   └── Dashboard.png                     # Dashboard screenshot
+│   ├── Dashboard.pbix
+│   ├── Dashboard.pbit
+│   └── Dashboard.png
 │
 ├── reports/
-│   ├── SQL_Insights_Report.md            # Full written analysis
+│   ├── SQL_Insights_Report.md
 │   └── Consumer_Complaint_Intelligence_Platform.pdf
 │
 ├── docs/
-│   ├── Project_Charter.md                # Business context & stakeholders
-│   ├── KPI_Definitions.md                # Metric definitions & formulas
-│   ├── Data_Inventory.md                 # Column-level data dictionary
-│   └── Business_Questions.md             # Analytics question framework
+│   ├── Project_Charter.md
+│   ├── KPI_Definitions.md
+│   ├── Data_Inventory.md
+│   └── Business_Questions.md
 │
 ├── LICENSE
 └── README.md
@@ -214,13 +188,8 @@ cd Consumer-Complaint-Intelligence-Risk-Analytics-Platform
 
 ### 2. Set up PostgreSQL
 ```sql
--- Create database
 CREATE DATABASE complaint_analytics;
-
--- Run schema
 \i sql/01_create_table.sql
-
--- Load data (update path to your CSV)
 COPY complaints FROM '/path/to/complaints_raw.csv' CSV HEADER;
 ```
 
@@ -239,8 +208,7 @@ jupyter notebook notebooks/Data_Cleaning.ipynb
 ```
 
 ### 5. Open the Power BI dashboard
-Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
-**[→ View Live Interactive Dashboard](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**
+Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the **[live version](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)**.
 
 ---
 
@@ -250,7 +218,7 @@ Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
 
 ![Dashboard Preview](dashboard/Dashboard.png)
 
-*Power BI dashboard featuring KPI scorecards, complaint trend line (2017–2023), product risk bar charts, state risk ranking, submission channel donut, and interactive State / Product / Year filters.*
+*KPI scorecards, complaint trend (2017–2023), product risk bars, state risk ranking, channel donut, and interactive State / Product / Year filters — each tied to a decision in the table above.*
 
 ---
 
@@ -262,9 +230,9 @@ Open `dashboard/Dashboard.pbix` in Power BI Desktop, or view the live version:
 | Python / Pandas | Data cleaning pipeline — null handling, dtype casting, feature engineering |
 | Data Modeling | Flat table schema with engineered time dimensions (month, year, quarter) |
 | KPI Design | Defined and computed 9 business KPIs with clear formulas and benchmarks |
-| Data Storytelling | Structured findings using Problem → Finding → Business Impact → Recommendation |
+| Decision Framing | Every finding converted into a named decision + owner action, not left as a chart |
 | Dashboard Design | Executive Power BI layout with filter slicers, ranked visuals, trend analysis |
-| Business Acumen | Translated complaint data into product risk scores, geographic alerts, and staffing recommendations |
+| Business Acumen | Translated complaint data into product risk scores, regional alerts, staffing calls |
 | Documentation | Project charter, data dictionary, KPI definitions, full SQL insights report |
 
 ---
@@ -279,8 +247,6 @@ Data Analyst | SQL · Python · Power BI · Excel | Turning 60K+ row datasets in
 - 🌐 [github.com/seema-kri](https://github.com/seema-kri)
 
 ---
-
-[![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-6C4EE4?style=flat-square&logo=databricks&logoColor=white)](https://app.mavenanalytics.io/datasets?search=finan)
 
 **Dataset:** [Financial Consumer Complaints — Maven Analytics Data Playground](https://app.mavenanalytics.io/datasets?search=finan)
 Consumer complaints on financial products & services (2017–2023). Sourced from the CFPB Consumer Complaint Database via Maven Analytics. Free to use for educational and portfolio purposes.
