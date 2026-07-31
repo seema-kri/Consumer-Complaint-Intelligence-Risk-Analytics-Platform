@@ -1,4 +1,4 @@
-# 🏦 Consumer Complaint Intelligence & Risk Analytics Platform
+# 🏦 Consumer Complaint Intelligence & Risk Analytics
 ### End-to-End Risk Analytics — Data Cleaning → SQL → Executive Power BI Reporting
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
@@ -9,7 +9,7 @@
 [![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-6C4EE4?style=flat-square&logo=databricks&logoColor=white)](https://app.mavenanalytics.io/datasets?search=finan)
 [![Power BI Live](https://img.shields.io/badge/🔴%20Live%20Dashboard-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/d8338132-ed69-4cdf-8f4d-465d75ab7989/c0ffc13bdca1d94090b4?experience=power-bi)
 
-> This project analyzes 62,516 consumer financial complaints (2017–2023) to identify product risk, regional concentration, and gaps in response performance. It's structured the way a risk/compliance analytics team would deliver it: defined business questions, a governed SQL layer, and a set of findings written as decisions — not just charts.
+> This project analyzes 62,516 consumer financial complaints (2017–2023) to identify product risk, regional concentration, and gaps in response performance. It's structured the way a risk/compliance analytics team would deliver it: defined business questions, a governed SQL layer, and findings written as decisions — not just charts.
 
 ---
 
@@ -21,10 +21,10 @@ Each finding below is written as a decision, with the supporting evidence and th
 |---|---|---|---|
 | 1 | **Reallocate support resourcing to 2 products** | Checking & Savings + Credit Card account for **65.6%** of all complaint volume | Shift staffing/tooling budget toward these two lines first |
 | 2 | **Open a fraud-detection investment case for Money Transfer** | Fraud drives **56%** of all Money Transfer complaints | Greenlight enhanced transaction monitoring for this product line |
-| 3 | **Stand up regional monitoring for 4 states** | California, Florida, Texas, New York = **~47%** of complaints; California alone sits at **2.1×** the risk of the next state | Build state-level dashboards + escalation paths for these 4 |
+| 3 | **Stand up regional monitoring for 4 states** | California, Florida, Texas, New York = **~47%** of complaints; California alone sits at **2.1×** the volume of the next-highest state | Build state-level dashboards + escalation paths for these 4 |
 | 4 | **Pre-staff Q2–Q3, not just year-round evenly** | Q2–Q3 carry **~53%** of annual complaint volume | Shift seasonal headcount/SLA planning ahead of peak |
 | 5 | **Audit the account-management workflow now** | 60%+ of checking-account complaints trace to open/close/manage friction | Immediate UX/process audit, not a backlog item |
-| 6 | **Track the 3.84% late-response rate at product level, not just overall** | Aggregate rate is under the 5% threshold, but risk hides inside individual products | Move SLA monitoring from company-wide to per-product |
+| 6 | **Track the 3.84% late-response rate at product level, not just overall** | Aggregate rate sits under the 5% threshold, but risk hides inside individual products | Move SLA monitoring from company-wide to per-product |
 
 *Decisions 1, 3, and 6 require no new tooling — they're reallocation/reporting changes achievable within existing systems. Decisions 2 and 5 (fraud monitoring, workflow audit) would need a scoping conversation with Risk/Product before commitment, since they carry implementation cost beyond this analysis.*
 
@@ -125,8 +125,16 @@ Raw Data (CSV)
 2023 ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  9,131  ← Declining
 ```
 
-### Methodology Note
-*[Placeholder — replace with a real example from your own analysis before publishing.]* One thing that strengthens a project like this: a short note on a finding you initially misread and corrected after digging deeper (e.g., a metric that looked wrong until you traced it to a data quality issue, or a trend that needed a caveat). Even 2-3 honest sentences here signal real analytical work rather than a clean, first-pass narrative — but only include it if it actually happened during your analysis. Don't invent one.
+### Complaint Submission Channels
+| Channel | Share |
+|---|---|
+| Web | 72.66% |
+| Referral | 17.22% |
+| Phone | 7.49% |
+| Fax | 0.37% |
+| Postal Mail / Web Referral / Email | remainder (each <1%) |
+
+**Web dominates at 72.66% of all submissions** — a clear digital-first signal. Combined with the account-management friction found above, this points to a concrete opportunity: a self-service portal fix for "manage my account" issues would reach the large majority of complainants directly, without needing phone or mail-channel workflow changes.
 
 ---
 
@@ -205,7 +213,7 @@ psql -d complaint_analytics -f sql/04_kpi_queries.sql
 psql -d complaint_analytics -f sql/05_advanced_analysis.sql
 ```
 
-### 4. Run Python cleaning notebook
+### 4. Run the Python cleaning notebook
 ```bash
 pip install pandas numpy jupyter
 jupyter notebook notebooks/Data_Cleaning.ipynb
